@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+
+:root {
+  --gray: #dce1f3;
+  --bg-home-blue: #000921;
+  --bg-about-red: #280411;
+  --bg-contact-gray: #1d1123;
+  --yellow: #ffbb30;
+  --red: #ff2a42;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: "Oswald", sans-serif;
+}
+body,
+header,
+main,
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  color: var(--gray);
+}
+header,
+footer {
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+footer {
+  margin-top: auto;
+  font-size: 1.5rem;
+}
+main {
+  gap: 1rem;
+}
+h1 {
+  font-size: 3rem;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
+a:link,
+a:visited {
+  color: var(--gray);
+  text-decoration: none;
+}
+a:hover,
+a:active {
+  color: var(--yellow);
+}
+a.active {
+  text-decoration: underline;
+}
+.bg-home {
+  background-color: var(--bg-home-blue);
+}
+.bg-about {
+  background-color: var(--bg-about-red);
+}
+.bg-contact {
+  background-color: var(--bg-contact-gray);
+}
+.not-found {
+  padding: 5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.not-found h1 {
+  font-size: 3rem;
+  color: var(--red);
+}
+.not-found h2 {
+  font-size: 2.5rem;
+  color: var(--yellow);
+}
+.not-found a {
+  font-size: 1.8rem;
+}

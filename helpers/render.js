@@ -1,5 +1,5 @@
-const render = (response, content, meta, statusCode) => {
-  response.writeHead(statusCode, { "content-type": meta.contentType });
+const render = (response, content, contentType, statusCode) => {
+  response.writeHead(statusCode, { "content-type": contentType });
   response.write(content);
   response.end();
 };
