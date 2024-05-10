@@ -2,11 +2,11 @@
   "name": "node-basic-server",
   "version": "1.0.0",
   "description": "learning basics of Node.js",
-  "main": "app.js",
-  "type": "commonjs",
+  "main": "server.js",
+  "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node --env-file=.env server.js",
+    "dev": "nodemon --env-file=.env server.js"
   },
   "keywords": [],
   "author": "",
