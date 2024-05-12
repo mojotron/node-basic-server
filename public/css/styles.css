@@ -5,6 +5,7 @@
   --bg-home-blue: #000921;
   --bg-about-red: #280411;
   --bg-contact-gray: #1d1123;
+  --bg-brown: #261b1b;
   --yellow: #ffbb30;
   --red: #ff2a42;
 }
@@ -75,6 +76,9 @@ a.active {
 }
 .bg-contact {
   background-color: var(--bg-contact-gray);
+}
+.bg-error {
+  background-color: var(--bg-brown);
 }
 .not-found {
   padding: 5rem;

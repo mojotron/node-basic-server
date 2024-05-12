@@ -9,14 +9,16 @@ Goal of this project is to create server using Node.js built in modules (without
 1. Clone or fork this repo
 2. cd into the node-basic-server directory (where this README is located).
 3. Run npm install
-
-### Starting the server
-
-Run npm start. The server will be found at [http://localhost:5000]
+4. create .env file with PORT=8080 (or eny number)
+5. npm run dev to start project The server will be found at http://localhost:PORT
 
 ## Using the server
 
 Server is hosting basic static site.
+
+## Screenshot
+
+![Home page.](/public/screenshots/screenshot-space.png "This is a sample image.")
 
 ### Server routes:
 
