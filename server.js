@@ -1,77 +1,57 @@
 import http from "node:http";
-import fs from "node:fs/promises";
-import path from "node:path";
 import url from "node:url";
+import path from "node:path";
+import fs from "node:fs/promises";
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const mainDirectory = "public";
 
-const getContentType = (extension) => {
-  switch (extension) {
+const port = process.env.PORT;
+const hostname = "127.0.0.1";
+
+const getPublicSubDir = (extname) => {
+  switch (extname) {
     case ".html":
-      return "text/html";
-    case ".css":
-      return "text/css";
-    case ".js":
-      return "text/javascript";
-    case ".svg":
-      return "image/svg+xml";
-    default:
-      return "text/plain";
+      return "views";
   }
 };
 
-const getPublicSubDirectory = (extension) => {
-  switch (extension) {
+const getContentType = (extname) => {
+  switch (extname) {
     case ".html":
-      return "views";
-    case ".css":
-      return "css";
-    case ".js":
-      return "scripts";
-    case ".svg":
-      return "images";
-    default:
-      return "";
+      return "text/html";
+  }
+};
+
+const loadFile = async (subDir, urlPath) => {
+  try {
+    const data = fs.readFile(path.join(__dirname, "public", subDir, urlPath));
+    return data;
+  } catch (error) {
+    throw error;
   }
 };
 
 const server = http.createServer(async (req, res) => {
   try {
-    const fileExtension = path.extname(req.url) || ".html";
-    const subDirectory = getPublicSubDirectory(fileExtension);
-    const isIndex = req.url === "/";
-    const isMarkup = fileExtension === ".html";
+    const urlPath = req.url === "/" ? "index.html" : req.url;
+    const extname = path.extname(urlPath);
+    const publicSubDir = getPublicSubDir(extname);
 
-    const filePath = path.join(
-      __dirname,
-      mainDirectory,
-      subDirectory,
-      isIndex ? "index.html" : `${req.url}${isMarkup ? fileExtension : ""}`
-    );
-
-    const data = await fs.readFile(filePath, { encoding: "utf-8" });
-    res.writeHead(200, { "Content-Type": getContentType(fileExtension) });
+    const data = await loadFile(publicSubDir, urlPath);
+    res.writeHead(200, { "Content-Type": getContentType(extname) });
     res.write(data);
-    return res.end();
   } catch (error) {
-    // check if error is page not found or internal server error
-    const isNotFound = error.code === "ENOENT";
-    const errorMarkup = isNotFound ? "notFound.html" : "serverError.html";
-    const statusCode = isNotFound ? 404 : 500;
-
-    const data = await fs.readFile(
-      path.join(__dirname, mainDirectory, "views", errorMarkup)
-    );
-    res.writeHead(statusCode, { "Content-Type": getContentType(".html") });
+    const isPageNotFound = error.code === "ENOENT";
+    const filePath = isPageNotFound ? "notFound.html" : "serverError.html";
+    const data = await loadFile("views", filePath);
+    res.writeHead(isPageNotFound ? 404 : 500, { "Content-Type": "text/html" });
     res.write(data);
-    return res.end();
+  } finally {
+    res.end();
   }
 });
 
-const PORT = process.env.PORT;
-
-server.listen(PORT, () =>
-  console.log(`server running (http://localhost:${PORT})`)
-);
+server.listen(port, hostname, () => {
+  console.log(`server running on http://${hostname}:${port}`);
+});
