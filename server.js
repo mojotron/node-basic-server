@@ -13,6 +13,14 @@ const getPublicSubDir = (extname) => {
   switch (extname) {
     case ".html":
       return "views";
+    case ".css":
+      return "styles";
+    case ".js":
+      return "scripts";
+    case ".jpg":
+    case ".png":
+    case ".svg":
+      return "images";
   }
 };
 
@@ -20,12 +28,30 @@ const getContentType = (extname) => {
   switch (extname) {
     case ".html":
       return "text/html";
+    case ".css":
+      return "text/css";
+    case ".js":
+      return "text/javascript";
+    case ".jpg":
+      return "image/jpeg";
+    case ".png":
+      return "image/png";
+    case ".svg":
+      return "image/svg+xml";
   }
 };
 
 const loadFile = async (subDir, urlPath) => {
+  if (subDir === "images") {
+    console.log(subDir, urlPath);
+  }
   try {
-    const data = fs.readFile(path.join(__dirname, "public", subDir, urlPath));
+    const data = await fs.readFile(
+      path.join(__dirname, "public", subDir, urlPath),
+      {
+        encoding: subDir === "images" ? null : "utf-8",
+      }
+    );
     return data;
   } catch (error) {
     throw error;
@@ -42,6 +68,7 @@ const server = http.createServer(async (req, res) => {
     res.writeHead(200, { "Content-Type": getContentType(extname) });
     res.write(data);
   } catch (error) {
+    console.log("error with", req.url);
     const isPageNotFound = error.code === "ENOENT";
     const filePath = isPageNotFound ? "notFound.html" : "serverError.html";
     const data = await loadFile("views", filePath);
