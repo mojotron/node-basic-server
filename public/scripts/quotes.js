@@ -1,11 +1,11 @@
-[
+export default [
   "You may abandon your own body but you must preserve your honour.",
 
   "Know your enemy, know his sword.",
 
   "When you decide to attack, keep calm and dash in quickly, forestalling the enemy...attack with a feeling of constantly crushing the enemy, from first to last.",
 
-  "There is no one way to salvation, whatever the manner in which a man may proceed. All forms and variations are governed by the eternal intelligence of the Universe that enables a man to approach perfection. It may be in the arts of music and painting or it may be in commerce, law, or medicine. It may be in the study of war or the study of peace. Each is as important as any other. Spiritual enlightenment through religious meditation such as Zen or in any other way is as viable and functional as any \"Way.\"... A person should study as they see fit.",
+  'There is no one way to salvation, whatever the manner in which a man may proceed. All forms and variations are governed by the eternal intelligence of the Universe that enables a man to approach perfection. It may be in the arts of music and painting or it may be in commerce, law, or medicine. It may be in the study of war or the study of peace. Each is as important as any other. Spiritual enlightenment through religious meditation such as Zen or in any other way is as viable and functional as any "Way."... A person should study as they see fit.',
 
   "No man is invincible, and therefore no man can fully understand that which would make him invincible",
 
@@ -22,7 +22,7 @@
 
   "When you decide to attack, keep calm and dash in quickly, forestalling the enemy...attack with a feeling of constantly crushing the enemy, from first to last.",
 
-  "There is no one way to salvation, whatever the manner in which a man may proceed. All forms and variations are governed by the eternal intelligence of the Universe that enables a man to approach perfection. It may be in the arts of music and painting or it may be in commerce, law, or medicine. It may be in the study of war or the study of peace. Each is as important as any other. Spiritual enlightenment through religious meditation such as Zen or in any other way is as viable and functional as any \"Way.\"... A person should study as they see fit.",
+  'There is no one way to salvation, whatever the manner in which a man may proceed. All forms and variations are governed by the eternal intelligence of the Universe that enables a man to approach perfection. It may be in the arts of music and painting or it may be in commerce, law, or medicine. It may be in the study of war or the study of peace. Each is as important as any other. Spiritual enlightenment through religious meditation such as Zen or in any other way is as viable and functional as any "Way."... A person should study as they see fit.',
 
   "No man is invincible, and therefore no man can fully understand that which would make him invincible",
 
@@ -70,5 +70,5 @@
 
   "You should not have a favorite weapon. To become over-familiar with one weapon is as much a fault as not knowing it sufficiently well.",
 
-  "If you are not progressing along the true way, a slight twist in the mind can become a major twist. This must be pondered well."
-]
+  "If you are not progressing along the true way, a slight twist in the mind can become a major twist. This must be pondered well.",
+];

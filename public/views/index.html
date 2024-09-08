@@ -8,25 +8,31 @@
     <title>Node.js Basic Server</title>
   </head>
   <body class="bg-home">
-    <header>
+    <header class="header">
+      <h2 class="header">Become undefeatable</h2>
+      <h1>The Timeless Philosophy of Miyamoto Musashi</h1>
       <nav>
         <ul class="nav-list">
-          <li><a class="active" class="active" href="/">home</a></li>
-          <li><a href="/about">about</a></li>
-          <li><a href="/contact">contact</a></li>
+          <li><a class="active" class="active" href="/">quote</a></li>
+          <li><a href="/principles.html">principles</a></li>
+          <li><a href="/about.html">about</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <h1>home</h1>
-      <button id="btn" type="button">Get quote</button>
-      <image src="/space.svg" width="250" height="250" />
-      <section id="image-container"></section>
+      <section class="container">
+        <div class="container__image" id="image-container"></div>
+        <blockquote class="container__quote">
+          <q class="container__quote__text"></q>
+          <p class="container__quote__author">- Miyamoto Musashi</p>
+        </blockquote>
+      </section>
     </main>
 
     <footer>
       <p>
+        <span>created by</span>
         <a
           href="https://github.com/mojotron/"
           target="_blank"
