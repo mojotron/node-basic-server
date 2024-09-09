@@ -160,3 +160,38 @@ a.active {
 .header h2 {
   font-size: 2rem;
 }
+/* DOKKODO */
+.dokkodo {
+  margin: 3rem 0;
+}
+.dokkodo h3,
+h2 {
+  text-align: center;
+}
+.dokkodo h2 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+.dokkodo h3 {
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+}
+.dokkodo__list {
+  position: absolute;
+  padding: 2rem 0 2rem 4rem;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.dokkodo__list li {
+  color: var(--red);
+  font-size: 1.6rem;
+}
+.dokkodo__list li::marker {
+  color: var(--black);
+}
