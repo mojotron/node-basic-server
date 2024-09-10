@@ -3,21 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+    <title>Node.js Basic Server</title>
   </head>
-  <body class="bg-error">
-    <div class="not-found">
-      <h1>Internal Server Error</h1>
-      <h2>Sorry we have connection problem, please try again later!</h2>
-      <a href="/">homepage</a>
-      <img
-        width="250"
-        height="250"
-        src="notFound.svg"
-        alt="aliens kidnaping tree [https://www.vecteezy.com/members/109140768084105141344]"
-      />
-    </div>
+  <body class="bg-home">
+    <header class="header">
+      <h2>Become undefeatable</h2>
+      <h1>The Timeless Philosophy of Miyamoto Musashi</h1>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="/">quote</a></li>
+          <li><a href="/principles.html">principles</a></li>
+          <li><a href="/about.html">about</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="error">
+      <h2>Connection problem, please try visit us later!</h2>
+      <p>(Error: 500 Server Error)</p>
+    </section>
 
     <footer>
       <p>
@@ -28,7 +33,6 @@
         >
           @Mojotron
         </a>
-        <span></span>
       </p>
     </footer>
   </body>

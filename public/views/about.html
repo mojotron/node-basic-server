@@ -3,31 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <script defer src="script.js" type="module"></script>
+    <link rel="stylesheet" href="main.css" />
+    <script defer src="about.js" type="module"></script>
     <title>Node.js Basic Server</title>
   </head>
-  <body class="bg-about">
-    <header>
+  <body class="bg-home">
+    <header class="header">
+      <h2>Become undefeatable</h2>
+      <h1>The Timeless Philosophy of Miyamoto Musashi</h1>
       <nav>
         <ul class="nav-list">
-          <li><a href="/">home</a></li>
-          <li><a class="active" href="/about">about</a></li>
-          <li><a href="/contact">contact</a></li>
+          <li><a href="/">quote</a></li>
+          <li><a href="/principles.html">principles</a></li>
+          <li><a class="active" href="/about.html">about</a></li>
         </ul>
       </nav>
     </header>
+
     <main>
-      <h1>about</h1>
-      <img
-        width="250"
-        height="250"
-        src="space-2.svg"
-        alt="astronaut on the rocket [image by Ilhustrator 21, https://www.vecteezy.com/members/ilhustrator2021]"
-      />
+      <section class="about">
+        <div class="about__bio">
+          <div class="about__bio__portrait"></div>
+          <div class="about__bio__text">
+            <h3>About Miyamoto Musashi</h3>
+            <p>
+              Miyamoto Musashi was a Japanese swordsman, strategist, artist, and
+              writer who became renowned through stories of his unique
+              double-bladed swordsmanship and undefeated record in his 62 duels
+              (next is 33 by Itō Ittōsai). Musashi is considered a kensei (sword
+              saint) of Japan.[3] He was the founder of the Niten Ichi-ryū, or
+              Nito Ichi-ryū, style of swordsmanship, and in his final years
+              authored The Book of Five Rings (五輪の書, Go Rin No Sho) and
+              Dokkōdō (獨行道, The Path of Aloneness).
+            </p>
+          </div>
+        </div>
+
+        <div class="about__dokkodo">
+          <h3>Dokkōdō</h3>
+          <p>
+            The "Dokkōdō" (Japanese: 獨行道) ("The Path of Aloneness", "The Way
+            to Go Forth Alone", or "The Way of Walking Alone") is a short work
+            written by Miyamoto Musashi a week before he died in 1645. It
+            consists of 21 precepts. "Dokkōdō" was largely composed on the
+            occasion of Musashi giving away his possessions in preparation for
+            death, and was dedicated to his favorite disciple, Terao Magonojō
+            (to whom the earlier Go rin no sho [The Book of Five Rings] had also
+            been dedicated), who took them to heart. "Dokkōdō" expresses a
+            stringent, honest, and ascetic view of life.
+          </p>
+          <p>
+            List of all 21
+            <a href="/principles.html" class="about__dokkodo__link"
+              >Principles</a
+            >
+          </p>
+        </div>
+      </section>
     </main>
+
     <footer>
       <p>
+        <span>created by</span>
         <a
           href="https://github.com/mojotron/"
           target="_blank"
@@ -35,7 +72,6 @@
         >
           @Mojotron
         </a>
-        <span></span>
       </p>
     </footer>
   </body>

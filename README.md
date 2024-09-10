@@ -16,13 +16,15 @@ Goal of this project is to create server using Node.js built in modules (without
 
 Server is hosting basic static site.
 
-## Screenshot
+## Screenshots
 
-![Home page.](/public/screenshots/screenshot-space.png "This is a sample image.")
+![Home page.](/public/screenshots/screenshot-index.png "This is a sample image.")
+![Home page.](/public/screenshots/screenshot-principles.png "This is a sample image.")
+![Home page.](/public/screenshots/screenshot-about.png "This is a sample image.")
 
 ### Server routes:
 
-- /
-- /about
-- /contact
+- / => gives user random samurai image with random quote
+- /principles.html => display Dokkōdō principles
+- /about.html => basic information about Miyamoto Musashi
 - /\* (\* means any other route, returning 404 page)

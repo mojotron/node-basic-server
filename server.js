@@ -42,9 +42,6 @@ const getContentType = (extname) => {
 };
 
 const loadFile = async (subDir, urlPath) => {
-  if (subDir === "images") {
-    console.log(subDir, urlPath);
-  }
   try {
     const data = await fs.readFile(
       path.join(__dirname, "public", subDir, urlPath),
@@ -61,14 +58,13 @@ const loadFile = async (subDir, urlPath) => {
 const server = http.createServer(async (req, res) => {
   try {
     const urlPath = req.url === "/" ? "index.html" : req.url;
-    const extname = path.extname(urlPath);
+    const extname = path.extname(urlPath) || ".html";
     const publicSubDir = getPublicSubDir(extname);
 
     const data = await loadFile(publicSubDir, urlPath);
     res.writeHead(200, { "Content-Type": getContentType(extname) });
     res.write(data);
   } catch (error) {
-    console.log("error with", req.url);
     const isPageNotFound = error.code === "ENOENT";
     const filePath = isPageNotFound ? "notFound.html" : "serverError.html";
     const data = await loadFile("views", filePath);
