@@ -1,5 +1,7 @@
 # Node.js Basic Server
 
+Live 👉[preview](https://alabaster-invincible-zenobia.glitch.me/) of the project, hosted by [Glitch](https://glitch.com/).
+
 This project is part of [The Odin Project](https://www.theodinproject.com/lessons/nodejs-basic-informational-site) curriculum.
 
 Goal of this project is to create server using Node.js built in modules (without express).
